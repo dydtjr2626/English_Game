@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duolingo Vocab Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="browser-window">
+    <div class="browser-header">
+        <div class="window-controls">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+        </div>
+        <div class="address-bar">🔒 https://English_Game.com</div>
+    </div>
+
+    <div class="game-content">
+        <!-- 상태 바 -->
+        <div class="status-bar" id="statusBar" style="display: none;">
+            <div>🔥 콤보: <span class="combo" id="comboDisplay">0</span></div>
+            <div>⭐ 점수: <span id="scoreDisplay">0</span></div>
+        </div>
+
+        <!-- 진행률 및 타이머 -->
+        <div class="progress-container" id="progressContainer" style="display: none;">
+            <div class="bar-wrapper">
+                <div class="bar-text">
+                    <span class="progress-text" id="progressText">문제: 1 / 10</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressBarFill"></div>
+                </div>
+            </div>
+
+            <div class="bar-wrapper">
+                <div class="bar-text">
+                    <span class="timer-text">남은 시간: <span id="timerDisplay">10</span>초</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="timer-bar-fill" id="timerBarFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 단계 선택 화면 -->
+        <div class="level-selection" id="levelSelection">
+            <h1>영어 단어 학습 게임</h1>
+            <p>난이도를 선택하세요</p>
+            
+            <button class="level-btn easy" onclick="startGame('easy')">
+                <svg class="level-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 80V50C50 50 30 50 20 30C10 10 40 10 50 30C60 10 90 10 80 30C70 50 50 50 50 50" stroke="#4CAF50" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="#81C784"/>
+                    <path d="M50 80V50" stroke="#2E7D32" stroke-width="8" stroke-linecap="round"/>
+                </svg>
+                Easy (초급)
+            </button>
+            
+            <button class="level-btn normal" onclick="startGame('normal')">
+                <svg class="level-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 90V50" stroke="#5D4037" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M50 60L30 40M50 70L70 50" stroke="#5D4037" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M30 40C15 40 15 20 30 20C45 20 45 40 30 40Z" fill="#66BB6A"/>
+                    <path d="M70 50C55 50 55 30 70 30C85 30 85 50 70 50Z" fill="#81C784"/>
+                    <path d="M50 45C35 45 35 25 50 25C65 25 65 45 50 45Z" fill="#4CAF50"/>
+                    <ellipse cx="50" cy="90" rx="30" ry="6" fill="#8D6E63"/>
+                </svg>
+                Normal (중급)
+            </button>
+            
+            <button class="level-btn hard" onclick="startGame('hard')">
+                <svg class="level-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 90L45 60H55L60 90H40Z" fill="#795548"/>
+                    <circle cx="50" cy="40" r="25" fill="#388E3C"/>
+                    <circle cx="35" cy="50" r="20" fill="#43A047"/>
+                    <circle cx="65" cy="50" r="20" fill="#2E7D32"/>
+                    <circle cx="50" cy="25" r="18" fill="#4CAF50"/>
+                </svg>
+                Hard (고급)
+            </button>
+        </div>
+
+        <!-- 게임 플레이 화면 -->
+        <div class="play-area" id="playArea">
+            <div class="word-display" id="wordDisplay">Word</div>
+            <div class="options-grid" id="optionsGrid"></div>
+        </div>
+
+        <!-- 결과 화면 -->
+        <div class="result-area" id="resultArea">
+            <h2 id="resultMessage">게임 종료!</h2>
+            <div class="result-message-text" id="resultSubMessage"></div>
+            <div class="result-image-container">
+                <img id="resultImage" src="" alt="결과 이미지">
+            </div>
+            <p id="finalScore">최종 점수: 0</p>
+            <button class="restart-btn" onclick="resetGame()">다시 시작하기</button>
+        </div>
+    </div>
+</div>
+
+<!-- 스크립트 연결 -->
+<script src="words.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
