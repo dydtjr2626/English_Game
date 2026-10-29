@@ -51,7 +51,8 @@
             <h1>영어 단어 학습 게임</h1>
             <p>난이도를 선택하세요</p>
             
-            <button class="level-btn easy" onclick="startGame('easy')">
+            <!-- ⭐️ 모든 버튼에 startGame() 함수가 연결되어 있습니다. -->
+            <button class="level-btn easy" onclick="startGame()">
                 <svg class="level-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M50 80V50C50 50 30 50 20 30C10 10 40 10 50 30C60 10 90 10 80 30C70 50 50 50 50 50" stroke="#4CAF50" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="#81C784"/>
                     <path d="M50 80V50" stroke="#2E7D32" stroke-width="8" stroke-linecap="round"/>
@@ -59,7 +60,7 @@
                 Easy (초급)
             </button>
             
-            <button class="level-btn normal" onclick="startGame('normal')">
+            <button class="level-btn normal" onclick="startGame()">
                 <svg class="level-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M50 90V50" stroke="#5D4037" stroke-width="6" stroke-linecap="round"/>
                     <path d="M50 60L30 40M50 70L70 50" stroke="#5D4037" stroke-width="4" stroke-linecap="round"/>
@@ -71,7 +72,7 @@
                 Normal (중급)
             </button>
             
-            <button class="level-btn hard" onclick="startGame('hard')">
+            <button class="level-btn hard" onclick="startGame()">
                 <svg class="level-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M40 90L45 60H55L60 90H40Z" fill="#795548"/>
                     <circle cx="50" cy="40" r="25" fill="#388E3C"/>
@@ -94,6 +95,7 @@
             <h2 id="resultMessage">게임 종료!</h2>
             <div class="result-message-text" id="resultSubMessage"></div>
             <div class="result-image-container">
+                <!-- 사진 파일명을 본인 환경에 맞게 수정하세요 -->
                 <img id="resultImage" src="" alt="결과 이미지">
             </div>
             <p id="finalScore">최종 점수: 0</p>
