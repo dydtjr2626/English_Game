@@ -19,13 +19,11 @@
     </div>
 
     <div class="game-content">
-        <!-- 상태 바 -->
         <div class="status-bar" id="statusBar" style="display: none;">
             <div>🔥 콤보: <span class="combo" id="comboDisplay">0</span></div>
             <div>⭐ 점수: <span id="scoreDisplay">0</span></div>
         </div>
 
-        <!-- 진행률 및 타이머 -->
         <div class="progress-container" id="progressContainer" style="display: none;">
             <div class="bar-wrapper">
                 <div class="bar-text">
@@ -46,12 +44,10 @@
             </div>
         </div>
 
-        <!-- 단계 선택 화면 -->
         <div class="level-selection" id="levelSelection">
             <h1>영어 단어 학습 게임</h1>
             <p>난이도를 선택하세요</p>
             
-            <!-- 모든 버튼에 startGame() 연결 -->
             <button class="level-btn easy" onclick="startGame()">
                 <svg class="level-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M50 80V50C50 50 30 50 20 30C10 10 40 10 50 30C60 10 90 10 80 30C70 50 50 50 50 50" stroke="#4CAF50" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="#81C784"/>
@@ -84,13 +80,11 @@
             </button>
         </div>
 
-        <!-- 게임 플레이 화면 -->
         <div class="play-area" id="playArea">
             <div class="word-display" id="wordDisplay">Word</div>
             <div class="options-grid" id="optionsGrid"></div>
         </div>
 
-        <!-- 결과 화면 -->
         <div class="result-area" id="resultArea">
             <h2 id="resultMessage">게임 종료!</h2>
             <div class="result-message-text" id="resultSubMessage"></div>
@@ -103,8 +97,7 @@
     </div>
 </div>
 
-<!-- 스크립트 연결 (순서 중요) -->
-<script src="words.js"></script>
+<!-- script.js 하나만 불러옵니다. -->
 <script src="script.js"></script>
 </body>
 </html>

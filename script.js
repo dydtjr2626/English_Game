@@ -1,3 +1,26 @@
+// --- 단어 데이터 (테스트용) ---
+const allWords = [
+    { word: "abroad", meaning: "adv. 해외로" },
+    { word: "abrupt", meaning: "adj. 갑작스러운, 뜻밖의" },
+    { word: "academic", meaning: "adj. 학업의, 학문적인" },
+    { word: "achieve", meaning: "v. 성취하다" },
+    { word: "adopt", meaning: "v. 채택하다" },
+    { word: "advantage", meaning: "n. 이점" },
+    { word: "affect", meaning: "v. 영향을 미치다" },
+    { word: "annual", meaning: "adj. 해마다의" },
+    { word: "avoid", meaning: "v. 피하다" },
+    { word: "balance", meaning: "n. 균형" }
+];
+
+const resultData = [
+    { text: "So sad", img: "짱구 매우 슬픔.png" },    
+    { text: "Sad", img: "짱구 슬픔.png" },       
+    { text: "Not bad", img: "짱구 시무룩.png" },   
+    { text: "Great", img: "짱구 신남.png" },     
+    { text: "Excellent", img: "짱구 존경.png" }  
+];
+
+// --- 게임 로직 ---
 let currentQuestions = [];
 let currentIndex = 0;
 let score = 0;
@@ -9,7 +32,6 @@ let timeLeft = 10;
 const maxTime = 10;
 const totalQuestions = 10;
 
-// DOM 요소
 const levelSelection = document.getElementById('levelSelection');
 const playArea = document.getElementById('playArea');
 const resultArea = document.getElementById('resultArea');
@@ -29,7 +51,6 @@ const resultImage = document.getElementById('resultImage');
 const finalScore = document.getElementById('finalScore');
 
 function startGame() {
-    // 1000개의 단어를 랜덤하게 섞은 뒤 10개만 자름
     currentQuestions = [...allWords].sort(() => Math.random() - 0.5).slice(0, totalQuestions);
     
     currentIndex = 0;
@@ -79,7 +100,6 @@ function loadQuestion() {
     const currentQ = currentQuestions[currentIndex];
     wordDisplay.textContent = currentQ.word;
     
-    // 보기 생성 (정답 + 랜덤 오답 3개)
     let options = [currentQ.meaning];
     
     while (options.length < 4) {
