@@ -321,4 +321,7 @@ const allWords = [
     { word: "drought", meaning: "n. 가뭄" },
     { word: "drug", meaning: "n. 약, 마약, 의약품 v. 약을 타다, 약을 먹이다" },
     { word: "easygoing", meaning: "adj. 느긋한, 태평스러운" },
-    { word: "eclipse", meaning: "n. (일식월
+    { word: "eclipse", meaning: "n. (일식월식의) 식" },
+    { word: "economic", meaning: "adj. 경제의, 경제적인" },
+    { word: "economist", meaning: "n. 경제학자" },
+    { word: "elect", meaning: "v. 선출하다, 선택

@@ -28,10 +28,8 @@ const resultSubMessage = document.getElementById('resultSubMessage');
 const resultImage = document.getElementById('resultImage');
 const finalScore = document.getElementById('finalScore');
 
-// 난이도 선택 버튼을 누르면 실행되는 함수
 function startGame() {
-    // 1000개의 단어(allWords)를 랜덤하게 섞은 뒤, 앞에서 10개만 뽑습니다.
-    // 만약 allWords가 잘 정의되어 있다면 이 부분이 완벽하게 작동합니다.
+    // 1000개의 단어를 랜덤하게 섞은 뒤 10개만 자름
     currentQuestions = [...allWords].sort(() => Math.random() - 0.5).slice(0, totalQuestions);
     
     currentIndex = 0;
@@ -40,7 +38,6 @@ function startGame() {
     combo = 0;
     maxCombo = 0;
     
-    // 화면 전환
     levelSelection.style.display = 'none';
     resultArea.style.display = 'none';
     statusBar.style.display = 'flex';
@@ -51,7 +48,6 @@ function startGame() {
     loadQuestion();
 }
 
-// 다시 시작하기 버튼을 누르면 실행되는 함수
 function resetGame() {
     clearInterval(timer);
     currentQuestions = [];
@@ -83,7 +79,7 @@ function loadQuestion() {
     const currentQ = currentQuestions[currentIndex];
     wordDisplay.textContent = currentQ.word;
     
-    // 보기 생성 (정답 1개 + allWords에서 랜덤 오답 3개)
+    // 보기 생성 (정답 + 랜덤 오답 3개)
     let options = [currentQ.meaning];
     
     while (options.length < 4) {
